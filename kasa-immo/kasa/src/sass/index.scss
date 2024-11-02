@@ -1,35 +1,48 @@
 @import "../sass/global.scss";
 @import "../sass/variables.scss";
-
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
 .ks-main {
   margin-inline: 5rem;
 }
-.ks-banner {
-  background-image: url(../../public/assets/img-accueil-banner.png);
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-  border-radius: 2rem;
-  color: white;
-  position: relative;
-  height: 223px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
-  h1 {
+.banner-title {
+  height: 268px;
+  .ks-banner {
+    background-image: url(../../public/assets/img-accueil-banner.png);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    border-radius: 1.6rem;
+    position: relative;
+    height: 223px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-radius: 1.6rem;
+      opacity: 0.6;
+      background-color: black;
+      inset: 0;
+    }
+  }
+  .title {
+    margin: 0;
+    position: relative;
+    bottom: 176px;
+    left: 230px;
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     br {
       display: none;
     }
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    border-radius: 2rem;
-    opacity: 0.6;
-    background-color: black;
-    inset: 0;
   }
 }
 .ks-location {
@@ -38,14 +51,14 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 60px;
   background-color: $lightgray-color;
   border-radius: 2rem;
   padding-block: 2rem;
   margin-bottom: 2.5rem;
   .cart-location {
     background: $primary-color;
-    width: 25%;
+    width: 27%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
@@ -58,31 +71,58 @@
       margin: 0;
       margin-inline-start: 20px;
       margin-block-end: 20px;
-      width: 31%;
     }
   }
 }
-// *************************************media query*********************************************************
-@media (max-width: 769px) {
+
+// *************************************media query tablette*****************************************
+@media (max-width: 1023px) {
   .ks-navbar {
-    margin: 0;
+    margin-inline: 22px;
+  }
+  .ks-main {
+    margin-inline: 22px;
+  }
+  .banner-title {
+    .title {
+      bottom: 164px;
+      left: 48px;
+      font-size: 40px;
+    }
+  }
+  .ks-location {
+    gap: 22px;
+  }
+}
+
+// *************************************media query mobile*******************************************
+@media (max-width: 767px) {
+  .ks-navbar {
     margin-bottom: 27px;
     .ks-logo {
       img {
-        width: 125px;
+        width: 145px;
       }
     }
     .ks-lien-nav {
-      font-size: 16px;
+      font-size: 12px;
+      gap: 1.6rem;
     }
   }
   .ks-main {
-    margin-inline: 0;
-    .ks-banner {
-      margin-bottom: 22px;
-      height: 111px;
-      h1 {
-        text-align: left;
+    .banner-title {
+      height: 134px;
+      .ks-banner {
+        margin-bottom: 22px;
+        height: 111px;
+      }
+      .title {
+        font-size: 24px;
+        bottom: 107px;
+        left: 16px;
+        br {
+          display: block;
+        }
       }
     }
   }
@@ -92,11 +132,15 @@
     background-color: white;
     margin-bottom: 27px;
     padding-block: 0;
+
     .cart-location {
       width: 100%;
     }
   }
   .ks-footer {
     padding: 66px 90px 58px 92px;
+    p {
+      width: 68%;
+    }
   }
 }

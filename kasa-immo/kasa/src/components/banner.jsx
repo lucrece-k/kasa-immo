@@ -1,11 +1,12 @@
 import "../sass/index.scss";
 function Banner() {
   return (
-    <div className="ks-banner">
-      <h1>
+    <div className="banner-title">
+      <div className="ks-banner"></div>
+      <p className="title">
         Chez vous,
         <br /> partout et ailleurs
-      </h1>
+      </p>
     </div>
   );
 }

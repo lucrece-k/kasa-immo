@@ -10,11 +10,14 @@
 
   .ks-logo {
     margin-right: auto;
+    img {
+      width: 210.322px;
+    }
   }
   .ks-lien-nav {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 3.56rem;
     a {
       text-decoration: none;
       color: black;
@@ -44,5 +47,10 @@
       height: 30.954px;
       margin-top: 6px;
     }
+  }
+  p {
+    margin: 0;
+    font-size: 12px;
+    text-align: center;
   }
 }
