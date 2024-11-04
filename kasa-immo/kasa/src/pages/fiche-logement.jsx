@@ -1,15 +1,15 @@
 import Header from "../components/header";
-import MainAPropos from "../components/main-a-propos";
 import Footer from "../components/footer";
+import MainFicheLogement from "../components/main-fiche-logement";
 
-function Apropos() {
+function FicheLogement() {
   return (
     <div>
       <Header />
-      <MainAPropos />
+      <MainFicheLogement />
       <Footer />
     </div>
   );
 }
 
-export default Apropos;
+export default FicheLogement;

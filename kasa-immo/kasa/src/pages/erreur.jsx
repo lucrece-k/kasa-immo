@@ -1,15 +1,13 @@
 import Header from "../components/header";
-import MainAPropos from "../components/main-a-propos";
 import Footer from "../components/footer";
-
-function Apropos() {
+import MainErreur from "../components/main-erreur";
+function Erreur() {
   return (
     <div>
       <Header />
-      <MainAPropos />
+      <MainErreur />
       <Footer />
     </div>
   );
 }
-
-export default Apropos;
+export default Erreur;

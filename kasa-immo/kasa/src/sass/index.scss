@@ -4,13 +4,45 @@ body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
 }
+.erreur-main {
+  .message-erreur {
+    color: $color;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 139px;
+  margin-block: 139px;
+  margin-inline: 5rem;
+  p {
+    margin: 0;
+  }
+  p:nth-child(1) {
+    font-size: 288px;
+    font-weight: 700;
+  }
+  P:nth-child(2) {
+    font-size: 36px;
+    font-weight: 500;
+  }
+  a {
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  br {
+    display: none;
+  }
+}
 .ks-main {
   margin-inline: 5rem;
+  margin-bottom: 2rem;
 }
 .banner-title {
   height: 268px;
   .ks-banner {
-    background-image: url(../../public/assets/img-accueil-banner.png);
+    // background-image: url(../../public/assets/img-accueil-banner.png);
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -20,26 +52,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
+    // filter: brightness(0.3);
 
-    &::before {
-      content: "";
-      position: absolute;
-      border-radius: 1.6rem;
-      opacity: 0.6;
-      background-color: black;
-      inset: 0;
-    }
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   border-radius: 1.6rem;
+    //   opacity: 0.3;
+    //   background-color: black;
+    //   inset: 0;
+    // }
   }
   .title {
     margin: 0;
     position: relative;
-    bottom: 176px;
+    bottom: 143px;
     left: 230px;
     color: white;
     font-size: 48px;
     font-weight: 700;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 79%;
     br {
       display: none;
     }
@@ -74,7 +108,49 @@ body {
     }
   }
 }
+.div-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 
+  .info-a-propos {
+    margin: 0;
+    color: $white-color;
+    font-size: 24px;
+    font-weight: 700;
+    background-color: $color;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    p {
+      margin: 0;
+    }
+  }
+}
+.logement-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 76px;
+  .info-logement {
+    margin: 0;
+    color: $white-color;
+    font-size: 24px;
+    font-weight: 700;
+    background-color: $color;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    p {
+      margin: 0;
+    }
+  }
+}
 // *************************************media query tablette*****************************************
 @media (max-width: 1023px) {
   .ks-navbar {
@@ -126,6 +202,26 @@ body {
       }
     }
   }
+  .erreur-main {
+    margin-inline: 22px;
+    margin-block: 113px;
+    .message-erreur {
+      gap: 113px;
+    }
+    p:nth-child(1) {
+      font-size: 96px;
+    }
+    P:nth-child(2) {
+      font-size: 18px;
+      text-align: center;
+    }
+    a {
+      font-size: 14px;
+    }
+    br {
+      display: block;
+    }
+  }
   .ks-location {
     flex-direction: column;
     align-items: normal;
@@ -137,6 +233,7 @@ body {
       width: 100%;
     }
   }
+
   .ks-footer {
     padding: 66px 90px 58px 92px;
     p {
