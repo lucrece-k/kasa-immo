@@ -1,4 +1,4 @@
-import "../sass/index.scss";
+import "../components/index.scss";
 function InfoAPropos({ title }) {
   return (
     <div className="info-a-propos">

@@ -1,9 +1,10 @@
-import Banner from "./banner";
-import InfoAPropos from "./info-a-propos";
+import Banner from "../components/banner";
+import InfoAPropos from "../components/infoAPropos";
 import aproposBackground from "../../src/images/img-banner-a-propos.png";
+import "../components/index.scss";
 const titleInfo = ["Fiabilité", "Respect", "Service", "Sécurité"];
 
-function MainAPropos() {
+function Apropos() {
   return (
     <div className="ks-main">
       <Banner
@@ -19,4 +20,5 @@ function MainAPropos() {
     </div>
   );
 }
-export default MainAPropos;
+
+export default Apropos;

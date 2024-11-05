@@ -1,4 +1,4 @@
-@import "../sass/variables.scss";
+@import "../variables.scss";
 
 // navbar
 .ks-navbar {
@@ -18,6 +18,9 @@
     display: flex;
     flex-direction: row;
     gap: 3.56rem;
+    .underline {
+      text-decoration: underline;
+    }
     a {
       text-decoration: none;
       color: black;

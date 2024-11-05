@@ -1,9 +1,10 @@
-@import "../sass/global.scss";
-@import "../sass/variables.scss";
+@import "../components/header-footer/global.scss";
+@import "../components/variables.scss";
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
 }
+
 .erreur-main {
   .message-erreur {
     color: $color;
@@ -148,6 +149,26 @@ body {
     width: 100%;
     p {
       margin: 0;
+    }
+  }
+}
+// fiche logement
+.ks-main {
+  .div-arrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    top: 240px;
+
+    .arrow {
+      padding: 5px;
+    }
+  }
+  .div-slide {
+    img {
+      width: 1103px;
+      height: 415px;
     }
   }
 }

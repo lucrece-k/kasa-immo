@@ -1,4 +1,4 @@
-import "../sass/index.scss";
+import "../components/index.scss";
 
 function Banner({ showText = true, backgroundImage, filter }) {
   return (
