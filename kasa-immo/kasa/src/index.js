@@ -6,7 +6,7 @@ import Header from "./components/header-footer/header";
 import Footer from "./components/header-footer/footer";
 import Apropos from "./pages/aPropos";
 import FicheLogement from "./pages/ficheLogement";
-// import listeLogement from "../src/listeLogement.json";
+import Location from "./components/location";
 import Erreur from "./pages/erreur";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -17,7 +17,8 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/a-propos" element={<Apropos />} />
-        <Route path="/location:id" element={<FicheLogement />} />
+        <Route path="/" element={<Location />} />
+        <Route path="/ficheLogement/:id" element={<FicheLogement />} />
         <Route path="*" element={<Erreur />} />
       </Routes>
       <Footer />

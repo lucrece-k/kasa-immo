@@ -1,9 +1,10 @@
-import Collapse from "../components/collapse";
 import "../components/index.scss";
 import listeLogement from "../listeLogement.json";
+import { useParams } from "react-router-dom";
 
 function FicheLogement() {
-  const logement = listeLogement.find((logement) => logement.id);
+  const { id } = useParams();
+  const logement = listeLogement.find((logement) => logement.id === id);
   return (
     <div className="ks-main">
       <div className="div-arrow">
@@ -14,25 +15,8 @@ function FicheLogement() {
           alt="arrow right"
         />
       </div>
-
       <div className="div-slide">
-        <img src={logement.cover} alt="logement" />
-      </div>
-
-      <div>
-        <div>
-          <p></p>
-          <p></p>
-        </div>
-        <p></p>
-        <span></span>
-        <div>
-          <p></p>
-          <p></p>
-          <p></p>
-          <span></span>
-        </div>
-        <Collapse />
+        <img src={logement.cover} alt={logement.title} />
       </div>
     </div>
   );
