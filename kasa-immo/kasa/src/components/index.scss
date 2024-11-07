@@ -190,6 +190,63 @@ body {
       color: white;
     }
   }
+
+  .detail-logement {
+    margin-top: 30px;
+    .title-host {
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      color: $color;
+      .title-sousTitle {
+        P {
+          margin: 0;
+        }
+        gap: 3px;
+        P:nth-child(1) {
+          font-size: 36px;
+          font-weight: 500;
+        }
+        p:nth-child(2) {
+          color: black;
+        }
+      }
+    }
+    .host-namePhoto {
+      display: flex;
+      flex-direction: row;
+    }
+    .tags-rat {
+      margin-block: 20px 31px;
+      .star {
+        color: lightgray;
+      }
+      .filled {
+        color: yellow;
+      }
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .tags {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin: 0;
+
+        button {
+          margin: 0;
+          background-color: $color;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          font-size: 14px;
+          font-weight: 700;
+          padding: 3px 29px 2px 30px;
+        }
+      }
+    }
+  }
 }
 // *************************************media query tablette*****************************************
 @media (max-width: 1023px) {
