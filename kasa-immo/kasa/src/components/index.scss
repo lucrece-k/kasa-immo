@@ -158,22 +158,36 @@ body {
   }
 }
 // fiche logement
+
 .ks-main {
   .div-arrow {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     position: relative;
-    top: 240px;
-
-    .arrow {
-      padding: 5px;
-    }
   }
   .div-slide {
-    img {
+    position: relative;
+    .arrow {
+      padding: 5px;
+      position: absolute;
+      top: 157px;
+    }
+    .arrowLeft {
+      margin-left: 10px;
+    }
+    .arrowRight {
+      right: 10px;
+    }
+    .photo {
       width: 1103px;
       height: 415px;
+    }
+    .numeroPhoto {
+      position: absolute;
+      top: 369px;
+      right: 534px;
+      color: white;
     }
   }
 }
