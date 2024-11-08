@@ -135,25 +135,38 @@ body {
     }
   }
 }
+// collapse
+.arrow-back {
+  transform: rotate(0deg);
+  transition: transform 600ms ease-in-out;
+  &.rotated {
+    transform: rotate(180deg);
+  }
+  .collapse-content {
+    background-color: aqua;
+    margin-top: 10px;
+    padding-left: 10px;
+  }
+}
 .logement-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 76px;
-  .info-logement {
+  .info-a-propos {
     margin: 0;
     color: $white-color;
-    font-size: 24px;
-    font-weight: 700;
     background-color: $color;
     padding: 15px;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     width: 100%;
+    gap: 271px;
     p {
       margin: 0;
+      font-size: 24px;
+      font-weight: 700;
     }
   }
 }
@@ -216,6 +229,11 @@ body {
     .host-namePhoto {
       display: flex;
       flex-direction: row;
+      .host-photo {
+        width: 64px;
+        height: 64px;
+        border-radius: 64px;
+      }
     }
     .tags-rat {
       margin-block: 20px 31px;

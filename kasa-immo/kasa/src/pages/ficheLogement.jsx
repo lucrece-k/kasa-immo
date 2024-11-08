@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import arrowLeft from "../images/arrowLeft.png";
 import arrowRight from "../images/arrowRight.png";
-import arrowBack from "../images/arrow_back.png";
+import Collapse from "../components/collapse";
 
 function FicheLogement({ showArrow = true, showNumber = true }) {
   const { id } = useParams();
@@ -97,15 +97,19 @@ function FicheLogement({ showArrow = true, showNumber = true }) {
             <span>{ratingStars(logement.rating)}</span>
           </div>
         </div>
+
         <div className="logement-info">
-          <div className="info-logement">
-            <p>Description</p>
-            <img src={arrowBack} alt="arrow" />
-          </div>
-          <div className="info-logement">
-            <p>Équipements</p>
-            <img src={arrowBack} alt="arrow" />
-          </div>
+          <Collapse
+            className="info-a-propos"
+            title="Description"
+            description={logement.description}
+          />
+
+          <Collapse
+            className="info-a-propos"
+            title="Équipements"
+            equipments={logement.equipments}
+          />
         </div>
       </div>
     </div>

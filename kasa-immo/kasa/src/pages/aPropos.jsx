@@ -1,7 +1,7 @@
 import Banner from "../components/banner";
-import InfoAPropos from "../components/infoAPropos";
 import aproposBackground from "../../src/images/img-banner-a-propos.png";
 import "../components/index.scss";
+import Collapse from "../components/collapse";
 const titleInfo = ["Fiabilité", "Respect", "Service", "Sécurité"];
 
 function Apropos() {
@@ -12,9 +12,10 @@ function Apropos() {
         backgroundImage={aproposBackground}
         filter={0.7}
       />
+
       <div className="div-info">
         {titleInfo.map((title, index) => (
-          <InfoAPropos key={index} title={title} />
+          <Collapse key={index} title={title} />
         ))}
       </div>
     </div>
