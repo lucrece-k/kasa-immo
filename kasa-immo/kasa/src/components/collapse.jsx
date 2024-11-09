@@ -23,7 +23,7 @@ function Collapse({ title, description, equipments }) {
         <div className="collapse-content">
           {description && <p>{description}</p>}
           {equipments && (
-            <ul>
+            <ul className="liste-equipments">
               {equipments.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}

@@ -74,43 +74,48 @@ function FicheLogement({ showArrow = true, showNumber = true }) {
       </div>
       <div className="detail-logement">
         <div className="title-host">
-          <div className="title-sousTitle">
+          <div className="title-tag">
+            {/* <div className="title-sousTitle"> */}
             <p>{logement.title}</p>
             <p>{logement.location}</p>
+            <div className="tags">
+              {logement.tags.map((tag, index) => (
+                <button key={index}>{tag}</button>
+              ))}
+            </div>
           </div>
-          <div className="host-namePhoto">
-            <p className="host-name">{logement.host.name}</p>
-            <img
-              className="host-photo"
-              src={logement.host.picture}
-              alt="host"
-            />
+          {/* </div> */}
+          <div className="host-rating">
+            <div className="name-photo">
+              <p className="host-name">{logement.host.name}</p>
+              <img
+                className="host-photo"
+                src={logement.host.picture}
+                alt="host"
+              />
+            </div>
+            <div className="rat">
+              <span>{ratingStars(logement.rating)}</span>
+            </div>
           </div>
         </div>
-        <div className="tags-rat">
-          <div className="tags">
-            {logement.tags.map((tag, index) => (
-              <button key={index}>{tag}</button>
-            ))}
-          </div>
-          <div className="rat">
-            <span>{ratingStars(logement.rating)}</span>
-          </div>
-        </div>
+      </div>
+      {/* <div className="tags-rat"> */}
 
-        <div className="logement-info">
-          <Collapse
-            className="info-a-propos"
-            title="Description"
-            description={logement.description}
-          />
+      {/* </div> */}
 
-          <Collapse
-            className="info-a-propos"
-            title="Équipements"
-            equipments={logement.equipments}
-          />
-        </div>
+      <div className="logement-info">
+        <Collapse
+          className="info-a-propos"
+          title="Description"
+          description={logement.description}
+        />
+
+        <Collapse
+          className="info-a-propos"
+          title="Équipements"
+          equipments={logement.equipments}
+        />
       </div>
     </div>
   );
