@@ -7,7 +7,6 @@ function Collapse({ title, description, equipments }) {
 
   const handleToggle = () => {
     setisOpen((prevState) => !prevState);
-    console.log("isOpen after toggle:", !isOpen);
   };
   return (
     <div>
@@ -23,7 +22,7 @@ function Collapse({ title, description, equipments }) {
         <div className="collapse-content">
           {description && <p>{description}</p>}
           {equipments && (
-            <ul className="liste-equipments">
+            <ul style={{ listStyleType: "none" }}>
               {equipments.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
