@@ -2,7 +2,7 @@ import Banner from "../components/banner";
 import aproposBackground from "../../src/images/img-banner-a-propos.png";
 import "../components/index.scss";
 import Collapse from "../components/collapse";
-const titleInfo = ["Fiabilité", "Respect", "Service", "Sécurité"];
+import listeApropos from "../listeApropos.json";
 
 function Apropos() {
   return (
@@ -14,8 +14,8 @@ function Apropos() {
       />
 
       <div className="div-info">
-        {titleInfo.map((title, index) => (
-          <Collapse key={index} title={title} />
+        {listeApropos.map((propos, id) => (
+          <Collapse key={id} title={propos.title} content={propos.content} />
         ))}
       </div>
     </div>

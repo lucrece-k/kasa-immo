@@ -2,12 +2,13 @@ import "../components/index.scss";
 import arrowBack from "../images/arrow_back.png";
 import { useState } from "react";
 
-function Collapse({ title, description, equipments }) {
+function Collapse({ title, content, description, equipments }) {
   const [isOpen, setisOpen] = useState(false);
 
   const handleToggle = () => {
-    setisOpen((prevState) => !prevState);
+    setisOpen(!isOpen);
   };
+
   return (
     <div>
       <div className="info-a-propos" onClick={handleToggle}>
@@ -20,6 +21,7 @@ function Collapse({ title, description, equipments }) {
       </div>
       {isOpen ? (
         <div className="collapse-content">
+          {content && <p>{content}</p>}
           {description && <p>{description}</p>}
           {equipments && (
             <ul style={{ listStyleType: "none" }}>

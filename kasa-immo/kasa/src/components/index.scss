@@ -253,7 +253,7 @@ body {
           font-size: 36px;
         }
         .filled {
-          color: yellow;
+          color: $color;
         }
       }
     }
@@ -287,6 +287,13 @@ body {
     .logement-info {
       .info-a-propos {
         gap: 81px;
+      }
+    }
+  }
+  .ks-main {
+    .div-slide {
+      .numeroPhoto {
+        right: 363px;
       }
     }
   }
@@ -412,6 +419,9 @@ body {
       }
       .arrow {
         width: 24px;
+      }
+      .numeroPhoto {
+        right: 140px;
       }
     }
   }

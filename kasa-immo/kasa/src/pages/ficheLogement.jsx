@@ -75,7 +75,6 @@ function FicheLogement({ showArrow = true, showNumber = true }) {
       <div className="detail-logement">
         <div className="title-host">
           <div className="title-tag">
-            {/* <div className="title-sousTitle"> */}
             <p>{logement.title}</p>
             <p>{logement.location}</p>
             <div className="tags">
@@ -84,7 +83,6 @@ function FicheLogement({ showArrow = true, showNumber = true }) {
               ))}
             </div>
           </div>
-          {/* </div> */}
           <div className="host-rating">
             <div className="name-photo">
               <p className="host-name">{logement.host.name}</p>
@@ -100,9 +98,6 @@ function FicheLogement({ showArrow = true, showNumber = true }) {
           </div>
         </div>
       </div>
-      {/* <div className="tags-rat"> */}
-
-      {/* </div> */}
 
       <div className="logement-info">
         <Collapse
