@@ -1,31 +1,24 @@
 import "../components/index.scss";
 import listeLogement from "../listeLogement.json";
-import { useNavigate, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useState } from "react";
 import arrowLeft from "../images/arrowLeft.png";
 import arrowRight from "../images/arrowRight.png";
 import Collapse from "../components/collapse";
+import Erreur from "./erreur";
 
 function FicheLogement({ showArrow = true, showNumber = true }) {
   const { id } = useParams();
-  const navigate = useNavigate();
-  const [logement, setlogement] = useState(null);
-
-  useEffect(() => {
-    const logementSelected = listeLogement.find(
-      (logement) => logement.id === id
-    );
-    if (!logementSelected) {
-      navigate("/erreur");
-    } else {
-      setlogement(logementSelected);
-    }
-  }, [id, navigate, listeLogement]);
+  const [actifPhoto, setactifPhoto] = useState(0);
+  const logement = listeLogement.find((logement) => logement.id === id);
+  if (!logement) {
+    return <Erreur />;
+  }
 
   const tableauPicture = Array.isArray(logement.pictures);
+
   const plusieurPhoto = tableauPicture && logement.pictures.length > 1;
 
-  const [actifPhoto, setactifPhoto] = useState(0);
   const clickArrowRight = () => {
     setactifPhoto(
       (i) => (i + 1) % (tableauPicture ? logement.pictures.length : 1)
