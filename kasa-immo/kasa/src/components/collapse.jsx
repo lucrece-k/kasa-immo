@@ -22,7 +22,9 @@ function Collapse({ title, content, description, equipments }) {
       {isOpen ? (
         <div className="collapse-content">
           {content && <p>{content}</p>}
-          {description && <p>{description}</p>}
+          {description && (
+            <p style={{ paddingBlock: 0, paddingInline: 30 }}>{description}</p>
+          )}
           {equipments && (
             <ul style={{ listStyleType: "none" }}>
               {equipments.map((item, index) => (

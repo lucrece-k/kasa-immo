@@ -1,4 +1,5 @@
 import "../components/index.scss";
+import { Link } from "react-router-dom";
 function Erreur() {
   return (
     <div className="erreur-main">
@@ -7,7 +8,7 @@ function Erreur() {
         Oups! La page que
         <br /> vous demandez n'existe pas.
       </p>
-      <a href="#1">Retourner sur la page d’accueil</a>
+      <Link to="/">Retourner sur la page d’accueil</Link>
     </div>
   );
 }

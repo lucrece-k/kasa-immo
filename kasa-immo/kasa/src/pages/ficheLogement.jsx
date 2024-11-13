@@ -1,5 +1,3 @@
-import "../components/index.scss";
-import listeLogement from "../listeLogement.json";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import arrowLeft from "../images/arrowLeft.png";
@@ -7,26 +5,27 @@ import arrowRight from "../images/arrowRight.png";
 import Collapse from "../components/collapse";
 import Erreur from "./erreur";
 
-function FicheLogement({ showArrow = true, showNumber = true }) {
+function FicheLogement({ listeLogement, showArrow = true, showNumber = true }) {
   const { id } = useParams();
-  const [actifPhoto, setactifPhoto] = useState(0);
   const logement = listeLogement.find((logement) => logement.id === id);
+
+  const [actifPhoto, setActifPhoto] = useState(0);
+
   if (!logement) {
     return <Erreur />;
   }
 
   const tableauPicture = Array.isArray(logement.pictures);
-
   const plusieurPhoto = tableauPicture && logement.pictures.length > 1;
 
   const clickArrowRight = () => {
-    setactifPhoto(
+    setActifPhoto(
       (i) => (i + 1) % (tableauPicture ? logement.pictures.length : 1)
     );
   };
 
   const clickArrowLeft = () => {
-    setactifPhoto(
+    setActifPhoto(
       (i) =>
         (i - 1 + (tableauPicture ? logement.pictures.length : 1)) %
         (tableauPicture ? logement.pictures.length : 1)
@@ -34,15 +33,11 @@ function FicheLogement({ showArrow = true, showNumber = true }) {
   };
 
   const ratingStars = (rating) => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <span key={i} className={i <= rating ? "star filled" : "star empty"}>
-          ★
-        </span>
-      );
-    }
-    return stars;
+    return Array.from({ length: 5 }, (_, i) => (
+      <span key={i} className={i < rating ? "star filled" : "star empty"}>
+        ★
+      </span>
+    ));
   };
 
   return (
@@ -73,8 +68,7 @@ function FicheLogement({ showArrow = true, showNumber = true }) {
         )}
         {showNumber && plusieurPhoto && (
           <span className="numeroPhoto">
-            {actifPhoto + 1} /{" "}
-            {tableauPicture ? logement.pictures.length : (showNumber = false)}
+            {actifPhoto + 1} / {tableauPicture ? logement.pictures.length : 1}
           </span>
         )}
       </div>
@@ -104,14 +98,12 @@ function FicheLogement({ showArrow = true, showNumber = true }) {
           </div>
         </div>
       </div>
-
       <div className="logement-info">
         <Collapse
           className="info-a-propos"
           title="Description"
           description={logement.description}
         />
-
         <Collapse
           className="info-a-propos"
           title="Équipements"

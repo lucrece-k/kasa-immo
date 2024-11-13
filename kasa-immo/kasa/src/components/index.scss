@@ -77,27 +77,38 @@ body {
   padding: 2rem;
   margin-bottom: 2.5rem;
   .cart-location {
-    background: $primary-color;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    display: block;
+
     border-radius: 10px;
     height: 340px;
 
     img {
-      width: 268px;
-      height: 250px;
-      padding: 20px;
+      width: 100%;
+      height: 100%;
       border-radius: 25px;
+      object-fit: cover;
+      object-position: left;
     }
-    p {
-      font-size: 18px;
-      font-weight: 700;
-      color: $white-color;
-      margin: 0;
-      padding-inline-start: 20px;
-      padding-block-end: 20px;
+    .titre-location {
+      position: relative;
+      top: -153px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      p {
+        font-weight: 700;
+        color: $white-color;
+        margin: 0;
+        padding-inline-start: 20px;
+      }
+      p:nth-child(1) {
+        font-size: 24px;
+      }
+      p:nth-child(2) {
+        font-size: 16px;
+        font-weight: 400;
+        color: $white-color;
+      }
     }
   }
 }
@@ -128,11 +139,6 @@ body {
   transition: transform 600ms ease-in-out;
   &.rotated {
     transform: rotate(180deg);
-  }
-  .collapse-content {
-    background-color: aqua;
-    margin-top: 10px;
-    padding-left: 10px;
   }
 }
 .logement-info {
@@ -181,6 +187,7 @@ body {
     .photo {
       width: 100%;
       height: 415px;
+      border-radius: 25px;
     }
     .numeroPhoto {
       position: absolute;
@@ -277,6 +284,16 @@ body {
   .ks-location {
     gap: 22px;
     grid-template-columns: 1fr 1fr;
+    .cart-location {
+      display: block;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .titre-location {
+        top: -162px;
+      }
+    }
   }
   .ks-main {
     .div-slide {
@@ -356,8 +373,15 @@ body {
     margin-bottom: 27px;
     padding: 0;
     .cart-location {
+      display: block;
       img {
-        width: 292px;
+        width: 100%;
+        top: 50px;
+        height: 100%;
+      }
+      .titre-location {
+        top: -154px;
+        gap: 12px;
       }
     }
   }
@@ -365,7 +389,7 @@ body {
   .ks-footer {
     padding: 66px 90px 58px 92px;
     p {
-      width: 68%;
+      width: 54%;
     }
   }
   // fiche logement
@@ -412,16 +436,21 @@ body {
       }
     }
   }
+
   .ks-main {
     .div-slide {
       .photo {
         width: 100%;
+        border-radius: 10px;
+        height: 255px;
       }
       .arrow {
         width: 24px;
+        top: 94px;
       }
       .numeroPhoto {
         right: 140px;
+        top: 214px;
       }
     }
   }

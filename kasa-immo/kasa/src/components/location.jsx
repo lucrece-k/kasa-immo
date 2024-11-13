@@ -1,18 +1,21 @@
-import listeLogement from "../listeLogement.json";
 import { useNavigate } from "react-router-dom";
 
-function Location() {
+function Location({ listeLogement }) {
   const navigate = useNavigate();
+
   return (
     <div className="ks-location">
-      {listeLogement.map((logement, id) => (
+      {listeLogement.map((logement) => (
         <div
-          key={id}
+          key={logement.id}
           className="cart-location"
           onClick={() => navigate(`/fichelogement/${logement.id}`)}
         >
           <img src={logement.cover} alt={logement.title} />
-          <p>{logement.title}</p>
+          <div className="titre-location">
+            <p>{logement.title}</p>
+            <p>{logement.location}</p>
+          </div>
         </div>
       ))}
     </div>
