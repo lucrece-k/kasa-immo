@@ -191,9 +191,15 @@ body {
     }
     .numeroPhoto {
       position: absolute;
-      top: 369px;
-      right: 534px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       color: white;
+      width: 11%;
+      margin: auto;
+      left: 0;
+      right: 0;
+      bottom: 25px;
     }
   }
 
@@ -246,6 +252,7 @@ body {
         .name-photo {
           display: flex;
           flex-direction: row;
+          gap: 12px;
           .host-name {
             color: $color;
           }
@@ -304,13 +311,6 @@ body {
     .logement-info {
       .info-a-propos {
         gap: 81px;
-      }
-    }
-  }
-  .ks-main {
-    .div-slide {
-      .numeroPhoto {
-        right: 363px;
       }
     }
   }
@@ -447,10 +447,6 @@ body {
       .arrow {
         width: 24px;
         top: 94px;
-      }
-      .numeroPhoto {
-        right: 140px;
-        top: 214px;
       }
     }
   }
