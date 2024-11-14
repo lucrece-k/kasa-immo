@@ -1,0 +1,59 @@
+@import "../variables.scss";
+
+// navbar
+.ks-navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-block: 45px 50px;
+  margin-inline: 5rem;
+
+  .ks-logo {
+    margin-right: auto;
+    img {
+      width: 210.322px;
+    }
+  }
+  .ks-lien-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 3.56rem;
+    .underline {
+      text-decoration: underline;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// footer
+.ks-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding-block: 66px 29px;
+  gap: 28px;
+  .footer-logo {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    .lettre {
+      width: 26.708px;
+      height: 30.954px;
+      margin-top: 6px;
+    }
+  }
+  p {
+    margin: 0;
+    font-size: 12px;
+    text-align: center;
+  }
+}
